@@ -9,7 +9,7 @@ function positionSize(accountSize, riskPercent, entryPrice, stopPrice) {
   if (entryPrice === stopPrice) {
     throw new Error('Entry price and stop-loss price must be different.');
   }
-  const riskAmount = accountSize * (riskPercent / 100);
+  const riskAmount = accountSize * (riskPercent / 10);
   const riskPerToken = Math.abs(entryPrice - stopPrice);
   const tokens = riskAmount / riskPerToken;
   const positionValue = tokens * entryPrice;
